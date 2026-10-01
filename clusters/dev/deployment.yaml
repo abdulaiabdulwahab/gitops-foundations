@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: hello-gitops
+  namespace: gitops-demo
+
+spec:
+
+  # Git defines the desired number of Pods.
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: hello-gitops
+
+  template:
+    metadata:
+      labels:
+        app: hello-gitops
+
+    spec:
+      containers:
+
+        - name: nginx
+
+          # Container image the Deployment should run.
+          image: nginx:1.27-alpine
+
+          ports:
+            - containerPort: 80
