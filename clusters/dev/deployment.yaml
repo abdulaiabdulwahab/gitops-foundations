@@ -8,7 +8,7 @@ metadata:
 spec:
 
   # Git defines the desired number of Pods.
-  replicas: 2
+  replicas: 4
 
   selector:
     matchLabels:
